@@ -17,8 +17,8 @@
     <%- include('../partials/header')%>
         <!--Main-->
         <main>
-            <a href="/schedules/new"><button class="links">Add&nbsp;Schedules</button></a>
-            <h1><strong>User Schedules</strong></h1>
+            
+            <h1><strong>User Schedules</strong></h1><br>
             <table class="data">
                 <tr>
                     <th>User&nbsp;ID</th>
@@ -30,7 +30,7 @@
                 <% for (let i=0; i < schedules.length; i++){%>
                     <tr>
                         <td>
-                            <%=schedules[i].user_id%>
+                            <p class="user-sched"><a href="/schedules"><%=schedules[i].user_id%></a></p>
                         </td>
                         <td>
                             <%=schedules[i].day%>

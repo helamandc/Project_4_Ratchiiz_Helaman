@@ -27,10 +27,10 @@ const PORT = process.env.PORT
 //Part 1
 
 
-const homeRoute = require("./routes/home")
-app.use('/users', homeRoute)
+const userRoute = require("./routes/user")
+app.use('/users', userRoute)
 //for specific users
-app.use('/', homeRoute)
+//app.use('/', userRoute)
 
 //all schedules
 const schedRoute = require("./routes/schedule")

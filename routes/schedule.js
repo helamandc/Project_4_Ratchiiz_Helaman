@@ -22,8 +22,6 @@ router.get('/schedules/:id', (req, res) => {
     const id = req.params.id
     const error = '404 Page cannot be displayed'
 
-
-
     db.any("SELECT * FROM schedtable;")
         .then((scheddata) => {
             if (id < scheddata.length) {

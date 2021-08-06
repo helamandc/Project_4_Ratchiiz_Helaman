@@ -51,10 +51,16 @@ header{
 
 .logout a {
     color: white;
-}
-.logout:visited, .logout:hover, .logout:focus, .logout:link {
     text-decoration: none;
-    color: white
+}
+
+.logout {
+    margin-top: 20px;
+}
+
+.sched-mgmt a {
+    color: white;
+    text-decoration: none;
 }
 
 header .title{
@@ -91,11 +97,12 @@ table {
 
   .icon {
     text-align: center;
-    cursor: pointer;
+    
   }
 
   .far {
       color: #6a7b8b;
+      cursor: pointer;
   }
   
   tr:nth-child(even) {
@@ -175,14 +182,7 @@ button{
     text-align: center;
 }
 
-.sched-btn {
-    float: right;
-    border-radius: 4px;
-    background-color: #6a7b8b;
-    color: white;
-    width: 100px;
-    height: 40px;
-}
+
 
 .links {
     float: right;
@@ -191,6 +191,12 @@ button{
     color: white;
     width: 100px;
     height: 40px;
+}
+
+.user-sched a {
+    cursor: pointer;
+    text-decoration: none;
+    color:#5c5b5b;
 }
 
 

@@ -17,7 +17,14 @@
     <%- include('../partials/header')%>
         <!--Main-->
         <main>
-            <h1><strong>User Schedule Information</strong></h1>
+            <h1><strong>User Information</strong></h1>
+            <% for (let i=0; i < usersid.length; i++){%>
+            <p>First Name: <%= usersid[i].firstname %></p>
+            <p>Last Name: <%= usersid[i].lastname %></p>
+            <p>Email Address: <%= usersid[i].email %></p>
+            <%}%>
+
+
             <table class="data">
                 <tr>
                     <th>User&nbsp;ID</th>
