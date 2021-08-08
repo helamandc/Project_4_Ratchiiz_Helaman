@@ -10,54 +10,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
 
 <body>
     <!--Header-->
     <%- include('../partials/header')%>
         <!--Main-->
         <main>
-            <a href="/schedules"><button class="sched-btn">All existing schedules</button></a>
-            <h1><strong>Registered Users</strong></h1>
+            
+            <h1><strong>Schedule Information</strong></h1><br>
             <table class="data">
                 <tr>
-                    <th>First&nbsp;Name</th>
-                    <th>Last&nbsp;Name</th>
-                    <th>Email&nbsp;Address</th>
-                    <th>See User Schedules</th>
+                    <th>User&nbsp;Name</th>
+                    <th>Day</th>
+                    <th>Start&nbsp;At</th>
+                    <th>End&nbsp;At</th>
                 </tr>
 
-                <% for (let i=0; i < users.length; i++){%>
+                <% for (let i=0; i < schedules.length; i++){%>
                     <tr>
                         <td>
-                            <%=users[i].firstname%>
+                            <a class="namelink" href="/userinfo"><%=schedules[i].firstname%> <%=schedules[i].lastname%></a>
                         </td>
                         <td>
-                            <%=users[i].lastname%>
+                            <%=schedules[i].day%>
                         </td>
                         <td>
-                            <%=users[i].email%>
+                            <%=schedules[i].start_at%>
                         </td>
-                        <td class="icon">
-                            <a href="/schedules"><i class="far fa-calendar-alt"></i></a>
+                        <td>
+                            <%=schedules[i].end_at%>
                         </td>
                     </tr>
                     <%}%>
-
-
             </table>
-
-            
-
-
-
-
-
-
         </main>
-     
+
 </body>
 
 </html>

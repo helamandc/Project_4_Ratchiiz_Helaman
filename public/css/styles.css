@@ -54,10 +54,6 @@ header{
     text-decoration: none;
 }
 
-.logout {
-    margin-top: 20px;
-}
-
 .sched-mgmt a {
     color: white;
     text-decoration: none;
@@ -75,9 +71,9 @@ header img{
     margin-top: 10px;
 }
 
-a:visited, a:hover, a:focus {
+.namelink:visited, .namelink:hover, .namelink:focus {
     text-decoration: none;
-    color: white
+    color:#5c5b5b;
 }
 
 
@@ -193,10 +189,6 @@ button{
     height: 40px;
 }
 
-.user-sched a {
-    cursor: pointer;
-    text-decoration: none;
-    color:#5c5b5b;
-}
+
 
 

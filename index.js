@@ -19,6 +19,18 @@ app.set('views', './views')
 //set 'public' folder as static folder
 app.use(express.static('./public'))
 
+const session = require("express-session")
+const twohours = 1000 * 60 * 60 * 2
+app.use(
+	session({
+		name: "session_id",
+		secret: process.env.SESSION_SECRET,
+		saveUninitialized: false /* Forces a session that is "uninitialized" to be saved to the store.  */,
+		cookie: { maxAge: twohours },
+		resave: false /* Forces the session to be saved back to the session store, even if the session was never modified during the request. */,
+	})
+)
+
 
 //Port specified
 const PORT = process.env.PORT
@@ -28,21 +40,31 @@ const PORT = process.env.PORT
 
 
 const userRoute = require("./routes/user")
-app.use('/users', userRoute)
+app.use("/userinfo", userRoute)
 //for specific users
 //app.use('/', userRoute)
 
 //all schedules
+const homeRoute = require("./routes/home")
+app.use("/home", homeRoute)
+
+//Add new schedule
 const schedRoute = require("./routes/schedule")
-app.use('/', schedRoute)
-app.use('/schedules', schedRoute)
+app.use("/newschedule", schedRoute)
 
+//login route
+const loginRouter = require("./routes/login")
+app.use("/login", loginRouter)
 
-//all users
+//logout route
+const logoutRouter = require("./routes/logout")
+app.use("/logout", logoutRouter)
 
+const signupRouter = require("./routes/signup")
+app.use("/signup", signupRouter)
 
-
-
+const welcomeRouter = require("./routes/welcome")
+app.use("/", welcomeRouter)
 
 //Making sure that we are connected to a local host
 app.listen(PORT, () => {
