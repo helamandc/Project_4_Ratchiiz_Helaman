@@ -4,8 +4,9 @@ const db = require('../database')
 
 router.get('/', (req, res) => {
 
-    db.any("SELECT usertable.firstname, usertable.lastname, schedtable.day, schedtable.start_at, schedtable.end_at FROM usertable, schedtable;")
+    db.any("SELECT usertable.firstname, usertable.lastname, schedtable.day, schedtable.start_at, schedtable.end_at FROM usertable, schedtable WHERE usertable.id = schedtable.user_id;")
         .then((schedtabledata) => {
+            console.log(schedtabledata)
             res.render('pages/home', {
                 schedules: schedtabledata
             })
