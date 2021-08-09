@@ -51,7 +51,8 @@
 
                     <tr>
                         <td>
-                            <%=schedules[0].day%>
+                            <% const day = [0,'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']%>
+                            <%= day[schedules[0].day]%>
                         </td>
                         <td>
                             <%=schedules[0].start_at%>

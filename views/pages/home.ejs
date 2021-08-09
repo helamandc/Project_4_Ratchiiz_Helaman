@@ -33,7 +33,8 @@
                             <a class="namelink" href="/userinfo"><%=schedules[i].firstname%> <%=schedules[i].lastname%></a>
                         </td>
                         <td>
-                            <%=schedules[i].day%>
+                            <% const day = [0,'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']%>
+                            <%= day[schedules[i].day]%>
                         </td>
                         <td>
                             <%=schedules[i].start_at%>
