@@ -39,8 +39,6 @@
                     </tr>
             </table>
 
-
-            
             <h1><strong>Schedule Information</strong></h1>
             <table class="data">
                 <tr>
@@ -48,19 +46,20 @@
                     <th>Start&nbsp;At</th>
                     <th>End&nbsp;At</th>
                 </tr>
-
+                <% for (let i=0; i < users.length; i++){%> 
                     <tr>
                         <td>
                             <% const day = [0,'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']%>
-                            <%= day[schedules[0].day]%>
+                            <%= day[users[i].day]%>
                         </td>
                         <td>
-                            <%=schedules[0].start_at%>
+                            <%=users[i].start_at%>
                         </td>
                         <td>
-                            <%=schedules[0].end_at%>
+                            <%=users[i].end_at%>
                         </td>
                     </tr>
+                    <%}%>
             </table>
         </main>
 

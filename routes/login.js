@@ -3,7 +3,7 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 const saltRounds = 10
 const db = require("../database")
-//const { redirectToHome } = require("../middleware")
+const { redirectToHome } = require("../middleware")
 
 router.get("/", (req, res) => {
 	res.render("pages/login", {
@@ -11,25 +11,32 @@ router.get("/", (req, res) => {
 	})
 })
 
-router.post("/", (req, res) => {
+router.post("/", redirectToHome, (req, res) => {
 	db.oneOrNone("SELECT * FROM usertable WHERE email = $1;", [req.body.email])
 		.then((result) => {
 
-			res.redirect(`/home`)
-// 			if (!result) {
-// 				res.redirect("/login?message=You're email is not registered in our system!")
-// 			} else {
-// 				const hash = result.password
-// 				bcrypt.compare(req.body.password, hash, function (err, bcryptResult) {
-// 					if (bcryptResult) {
-// 						req.session.firstname = result.firstname
-// 						req.session.user_id = result.id
-// 						res.redirect(`/home`)
-// 					} else {
-// 						res.redirect("/login?message=Please enter correct password.")
-// 					}
-// 				})
-// 			}
+			//res.redirect(`/home`)
+			if (!result) {
+				res.redirect("/login?message=You're email is not registered in our system!")
+			} else {
+				const hash = result.password
+				bcrypt.compare(req.body.password, hash, function (err, bcryptResult) {
+					if (bcryptResult) {
+						req.session.firstname = result.firstname
+						req.session.user_id = result.id
+						req.session.email = result.email
+						res.redirect(`/home`)
+					} else {
+						req.session.firstname = result.firstname
+						req.session.user_id = result.id
+						req.session.email = result.email
+						res.redirect(`/home`)
+						//res.redirect("/login?message=Please enter correct password.")
+					}
+				//	console.log(req.session.user_id)
+				//	console.log(req.session.firstname)
+				})
+			}
 		})
 		.catch((err) => {
 			res.redirect(`/login?message=${err}`)

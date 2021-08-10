@@ -57,8 +57,8 @@ const loginRouter = require("./routes/login")
 app.use("/login", loginRouter)
 
 //logout route
-const logoutRouter = require("./routes/logout")
-app.use("/logout", logoutRouter)
+//const logoutRouter = require("./routes/logout")
+//app.use("/logout", logoutRouter)
 
 const signupRouter = require("./routes/signup")
 app.use("/signup", signupRouter)
