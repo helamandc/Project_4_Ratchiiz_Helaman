@@ -24,13 +24,9 @@ router.post("/", redirectToHome, (req, res) => {
 						req.session.firstname = result.firstname
 						req.session.user_id = result.id
 						req.session.email = result.email
-						res.redirect(`/home`)
+						res.redirect("/home")
 					} else {
-						req.session.firstname = result.firstname
-						req.session.user_id = result.id
-						req.session.email = result.email
-						res.redirect(`/home`)
-						//res.redirect("/login?message=Please enter correct password.")
+						res.redirect("/login?message=Please enter correct password.")
 					}
 				})
 			}
