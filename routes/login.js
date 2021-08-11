@@ -5,13 +5,11 @@ const saltRounds = 10
 const db = require("../database")
 const { redirectToHome } = require("../middleware")
 
-router.get("/", (req, res) => {
-	res.render("pages/login", {
-		message: req.query.message,
-	})
+router.get("/", redirectToHome, (req, res) => {
+	res.render("pages/login")
 })
 
-router.post("/", redirectToHome, (req, res) => {
+router.post("/", (req, res) => {
 	db.oneOrNone("SELECT * FROM usertable WHERE email = $1;", [req.body.email])
 		.then((result) => {
 

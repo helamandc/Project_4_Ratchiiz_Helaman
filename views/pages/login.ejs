@@ -19,25 +19,23 @@
             <a href=""><img src="/assets/full_logo_white.png"></a>
         </div>
     </header>
-        <!--Main-->
-        <main>
-            <h1><strong>Mr. Coffee Login Page</strong></h1><br>
-            <% if (message) { %>
-                <div class="row errormsg"><%= message %></div>
-            <% } %>    
-            <form action="/login" method="POST">     
-              <div>
-                    <label for="email">Email *</label>
-                    <input id="email" type="email" name="email" required />
-                  </div>
-                  <div>
-                    <label for="password">Password *</label>
-                    <input id="password" type="password" name="password" required />  
-                </div>
-                <div>                                      
-                    <button type="submit" class="button">Login</button>
-              </div>
-            </form>
-        </main>
+    <!--Main-->
+    <main>
+        <h1><strong>Mr. Coffee Login Page</strong></h1><br>
+        <form action="/login" method="POST">
+            <div>
+                <label for="email">Email *</label>
+                <input id="email" type="email" name="email" required />
+            </div>
+            <div>
+                <label for="password">Password *</label>
+                <input id="password" type="password" name="password" required />
+            </div>
+            <div>
+                <button type="submit" class="button">Login</button>
+            </div>
+        </form>
+    </main>
 </body>
+
 </html>

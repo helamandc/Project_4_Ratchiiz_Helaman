@@ -49,8 +49,8 @@ const loginRouter = require("./routes/login")
 app.use("/login", loginRouter)
 
 //logout route
-//const logoutRouter = require("./routes/logout")
-//app.use("/logout", logoutRouter)
+const logoutRouter = require("./routes/logout")
+app.use("/logout", logoutRouter)
 
 const signupRouter = require("./routes/signup")
 app.use("/signup", signupRouter)
@@ -60,7 +60,7 @@ app.use("/", welcomeRouter)
 
 //Making sure that we are connected to a local host
 app.listen(PORT, () => {
-    console.log(`App is listening at http://localhost:${PORT}`)
+	console.log(`App is listening at http://localhost:${PORT}`)
 })
 
 

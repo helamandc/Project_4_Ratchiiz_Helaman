@@ -24,17 +24,17 @@
                     <th>Last&nbsp;Name</th>
                     <th>Email</th>
                 </tr>
-                    <tr>
-                        <td>
-                            <%=users[0].firstname%>
-                        </td>
-                        <td>
-                            <%=users[0].lastname%>
-                        </td>
-                        <td>
-                            <%=users[0].email%>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        <%=users[0].firstname%>
+                    </td>
+                    <td>
+                        <%=users[0].lastname%>
+                    </td>
+                    <td>
+                        <%=users[0].email%>
+                    </td>
+                </tr>
             </table>
 
             <h1><strong>Schedule Information</strong></h1>
@@ -44,11 +44,12 @@
                     <th>Start&nbsp;At</th>
                     <th>End&nbsp;At</th>
                 </tr>
-                <% for (let i=0; i < users.length; i++){%> 
+                <% for (let i=0; i < users.length; i++){%>
                     <tr>
                         <td>
-                            <% const day = [0,'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']%>
-                            <%= day[users[i].day]%>
+                            <% const day=[0,'Monday', 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday'
+                                , 'Sunday' ]%>
+                                <%= day[users[i].day]%>
                         </td>
                         <td>
                             <%=users[i].start_at%>
@@ -61,4 +62,5 @@
             </table>
         </main>
 </body>
+
 </html>

@@ -23,9 +23,7 @@ router.post("/", (req, res) => {
 	var encPassword = bcrypt.hashSync(req.body.password, saltRounds)
 	console.log("password: " + encPassword)
 
-	//res.redirect(`/home?firstname=${req.body.firstname}`)
-
-	db.any("SELECT firstname from usertable where email = $1;", [req.body.email]).then((firstname) => {
+	db.any("SELECT firstname FROM usertable WHERE email = $1;", [req.body.email]).then((firstname) => {
 		if (firstname.length > 0) {
 			// if returned something, it means the user is already on db
 			res.redirect("/signup?message=User already exists")
@@ -44,4 +42,4 @@ router.post("/", (req, res) => {
 	})
 })
 
-module.exports = router 
+module.exports = router

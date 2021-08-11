@@ -189,6 +189,10 @@ button{
     height: 40px;
 }
 
+.errormsg {
+    color: red
+}
+
 
 
 

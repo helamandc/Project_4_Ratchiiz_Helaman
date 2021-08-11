@@ -4,9 +4,9 @@ const db = require('../database')
 
 //Display the form
 router.get("/", (req, res) => {
-	res.render("pages/schedule" , {
+    res.render("pages/schedule", {
         name: req.session.firstname
-	})
+    })
 })
 
 //Add new schedule
