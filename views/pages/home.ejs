@@ -30,7 +30,7 @@
                 <% for (let i=0; i < schedules.length; i++){%>
                     <tr>
                         <td>
-                            <a class="namelink" href="/userinfo"><%=schedules[i].firstname%> <%=schedules[i].lastname%></a>
+                            <a class="namelink" href="/userinfo/<%=schedules[i].id%>"><%=schedules[i].firstname%> <%=schedules[i].lastname%></a>
                         </td>
                         <td>
                             <% const day = [0,'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']%>

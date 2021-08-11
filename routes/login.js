@@ -15,7 +15,6 @@ router.post("/", redirectToHome, (req, res) => {
 	db.oneOrNone("SELECT * FROM usertable WHERE email = $1;", [req.body.email])
 		.then((result) => {
 
-			//res.redirect(`/home`)
 			if (!result) {
 				res.redirect("/login?message=You're email is not registered in our system!")
 			} else {
@@ -33,8 +32,6 @@ router.post("/", redirectToHome, (req, res) => {
 						res.redirect(`/home`)
 						//res.redirect("/login?message=Please enter correct password.")
 					}
-				//	console.log(req.session.user_id)
-				//	console.log(req.session.firstname)
 				})
 			}
 		})
