@@ -6,5 +6,4 @@ router.get("/", (req, res) => {
     res.render("pages/welcome")
 })
 
-
 module.exports = router

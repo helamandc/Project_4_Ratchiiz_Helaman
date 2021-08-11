@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
@@ -17,7 +19,7 @@
     <%- include('../partials/header')%>
         <!--Main-->
         <main>
-            
+
             <h1><strong>Schedule Information</strong></h1><br>
             <table class="data">
                 <tr>
@@ -30,11 +32,15 @@
                 <% for (let i=0; i < schedules.length; i++){%>
                     <tr>
                         <td>
-                            <a class="namelink" href="/userinfo"><%=schedules[i].firstname%> <%=schedules[i].lastname%></a>
+                            <a class="namelink" href="/userinfo/<%=schedules[i].id%>">
+                                <%=schedules[i].firstname%>
+                                    <%=schedules[i].lastname%>
+                            </a>
                         </td>
                         <td>
-                            <% const day = [0,'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']%>
-                            <%= day[schedules[i].day]%>
+                            <% const day=[0,'Monday', 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday'
+                                , 'Sunday' ]%>
+                                <%= day[schedules[i].day]%>
                         </td>
                         <td>
                             <%=schedules[i].start_at%>

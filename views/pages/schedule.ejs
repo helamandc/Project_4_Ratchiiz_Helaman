@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
@@ -17,36 +19,36 @@
     <%- include('../partials/header')%>
         <!--Main-->
         <main>
-            <h1><strong>Hi, add your new schedule here:</strong></h1><br>
-
-            <form class="form" action="/userinfo" method="post">
-                <div class="field">
-                    <label for="day">Day* </label>
-                    <select id="day" name="day" required>
-                        <option value="">-- Select day --</option>
-                        <option value="1">Monday</option>
-                        <option value="2">Tuesday</option>
-                        <option value="3">Wednesday</option>
-                        <option value="4">Thursday</option>
-                        <option value="5">Friday</option>
-                        <option value="6">Saturday</option>
-                        <option value="7">Sunday</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <label for="start_at">Time in* </label>
-                    <input id="start_at" type="time" name="start_at" required placeholder="e.g. 2AM, 2PM">
-                </div>
-                <div class="field">
-                    <label for="end_at">Time out* </label>
-                    <input id="end_at" type="time" name="end_at" required placeholder="e.g. 2AM, 2PM">
-                </div>
-                <div>
-                    <button id="submit">Submit</button>
-                </div>
-            </form>
+            <% if (name) { %>
+                <h1><strong>Hi <%= name %>, add your new schedule here:</strong></h1><br>
+                <% }%>
+                    <form class="form" action="/newschedule/add" method="post">
+                        <div class="field">
+                            <label for="day">Day* </label>
+                            <select id="day" name="day" required>
+                                <option value="">-- Select day --</option>
+                                <option value="1">Monday</option>
+                                <option value="2">Tuesday</option>
+                                <option value="3">Wednesday</option>
+                                <option value="4">Thursday</option>
+                                <option value="5">Friday</option>
+                                <option value="6">Saturday</option>
+                                <option value="7">Sunday</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="start_at">Time in* </label>
+                            <input id="start_at" type="time" name="start_at" required placeholder="e.g. 2AM, 2PM">
+                        </div>
+                        <div class="field">
+                            <label for="end_at">Time out* </label>
+                            <input id="end_at" type="time" name="end_at" required placeholder="e.g. 2AM, 2PM">
+                        </div>
+                        <div>
+                            <button id="submit">Submit</button>
+                        </div>
+                    </form>
         </main>
-      
 </body>
 
 </html>

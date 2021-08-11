@@ -2,9 +2,11 @@ const express = require("express")
 const router = express.Router()
 const db = require('../database')
 
-router.get('/', (req, res) => {
+const { redirectToLogin } = require("../middleware")
 
-    db.any("SELECT usertable.firstname, usertable.lastname, schedtable.day, schedtable.start_at, schedtable.end_at FROM usertable, schedtable WHERE usertable.id = schedtable.user_id;")
+router.get("/", redirectToLogin, (req, res) => {
+
+    db.any("SELECT usertable.id, usertable.firstname, usertable.lastname, schedtable.day, schedtable.start_at, schedtable.end_at FROM usertable, schedtable WHERE usertable.id = schedtable.user_id;")
         .then((schedtabledata) => {
             res.render('pages/home', {
                 schedules: schedtabledata
@@ -16,6 +18,5 @@ router.get('/', (req, res) => {
             })
         })
 })
-
 
 module.exports = router

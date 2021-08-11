@@ -1,11 +1,8 @@
+
 require('dotenv').config()
 const express = require('express')
-const data = require('./data')
-
 const ejs = require('ejs')
-
 const db = require('./database')
-
 const app = express()
 
 //Body parser
@@ -31,18 +28,14 @@ app.use(
 	})
 )
 
-
 //Port specified
 const PORT = process.env.PORT
 
 //ROUTES
 //Part 1
 
-
 const userRoute = require("./routes/user")
 app.use("/userinfo", userRoute)
-//for specific users
-//app.use('/', userRoute)
 
 //all schedules
 const homeRoute = require("./routes/home")
@@ -68,7 +61,5 @@ app.use("/", welcomeRouter)
 
 //Making sure that we are connected to a local host
 app.listen(PORT, () => {
-    console.log(`App is listening at http://localhost:${PORT}`)
+	console.log(`App is listening at http://localhost:${PORT}`)
 })
-
-
