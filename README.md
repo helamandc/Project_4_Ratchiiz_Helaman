@@ -2,13 +2,9 @@
 
 This project will showcase sample user login, sign up and clearing of cookies.
 
-## Authors: Maneerat Puangsuwan, Helaman Del Castillo
+## Technologies
 
 Postgres, Javascript, EJS, HTML5, CSS3, NodeJS, Express, Bootstrap and Pg-promise are used in this project
-
-## Installation
-
-To run on a localhost server: http://localhost:5000
 
 ## Set Up
 
@@ -26,6 +22,12 @@ PG_HOST=localhost
 PG_PORT=5432
 PORT=5000
 SESSION_SECRET= ?
+```
+
+## Usage
+
+```
+npm run dev
 ```
 
 ## Authors
