@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;;
     color:#5c5b5b;
     display: flex;
     flex-direction: column;
@@ -49,6 +49,11 @@ header{
     
 }
 
+.active {
+    color: #8ba4bb;
+}
+
+
 .logout a {
     color: white;
     text-decoration: none;
@@ -76,10 +81,12 @@ header img{
     color:#5c5b5b;
 }
 
-
+.link-secondary{
+    text-decoration: none;
+}
 
 table {
-    font-family: arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 50px;
@@ -121,11 +128,34 @@ table {
       animation: mymove 5s infinite;
   }
 
- 
+  .box-shadow {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    justify-content: center;
+    padding: 3%;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+ .wrap-form {
+    display: flex;
+    justify-content: center;
+ }
 
   form {
       text-align: center;
   }
+
+  .form-size {
+    max-width: 100%;
+  }
+
+  .center_div{
+    display: flex;
+    justify-content: center;
+}
+
 label {
     display: inline-block;
     clear: left;
@@ -140,7 +170,7 @@ input {
       padding-bottom: 10px;
       
   }
-button:hover {
+/* button:hover {
     cursor: pointer;
 }
 button{
@@ -148,7 +178,7 @@ button{
     width: 70px;
     height: 30px;
     box-shadow: black 0 0 2px;
-}
+} */
 
 #day {
     width: 166px;
@@ -192,7 +222,6 @@ button{
 .errormsg {
     color: red
 }
-
 
 
 

@@ -62,5 +62,3 @@ app.use("/", welcomeRouter)
 app.listen(PORT, () => {
 	console.log(`App is listening at http://localhost:${PORT}`)
 })
-
-

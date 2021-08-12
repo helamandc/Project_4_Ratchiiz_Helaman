@@ -17,4 +17,3 @@ CREATE TABLE IF NOT EXISTS schedtable (
     start_at TIME NOT NULL,
     end_at TIME NOT NULL
 );
-

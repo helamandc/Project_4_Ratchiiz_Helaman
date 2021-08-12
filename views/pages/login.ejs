@@ -5,15 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mr. Coffee Login Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
     <!--Header-->
+
+    <%- include('../partials/login_header')%>
+    <!--Main-->
+   <div class="box-shadow">
+    <main>
+        
+        <h1><strong>Log in to Mr.Coffee</strong></h1><br>
+        <div class="wrap-form">
+            <form action="/login" method="POST">
+            
+                <div class="mb-3 form-size center_div ">
+                    <label class="form-label" for="email">Email *</label>
+                    <input class="form-control" id="email" type="email" name="email" required />
+                </div>
+                <div class="mb-3 form-size center_div">
+                    <label class="form-label" for="password">Password *</label>
+                    <input class="form-control" id="password" type="password" name="password" required />
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+        
+        <p></p>
+        <p>Don't have an account? <a class="link-secondary" href="/signup">Sign up for Mr.Coffee</a></p>
+    </main>
+   </div>
+=======
     <header>
         <div>
             <a href=""><img src="/assets/full_logo_white.png"></a>
@@ -36,6 +67,7 @@
             </div>
         </form>
     </main>
+
 </body>
 
 </html>
